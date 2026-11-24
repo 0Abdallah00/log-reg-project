@@ -3,8 +3,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const StudentModel = require("./models/Student");
-
+const jwt = require("jsonwebtoken") ;
 const app = express();
+
 
 app.use(express.json());
 app.use(cors());
@@ -16,12 +17,14 @@ app.post("/login" ,(req , res) =>{
         user => {
             if(user){
                 if(user.Password === Password){
-                    res.json("sucsees") ;
+                    const token = jwt.sign({ id: user._id }, "SECRET_KEY", { expiresIn: "1d" });
+                    res.json({status: "success"}, token) ;
                 }else{
-                    res.json("password is incorrect");
+                    res.json({ status: "fail", message: "password is incorrect" });
                 }
+
             }else{
-                res.json("the email is not exist") ;
+                 res.json({ status: "fail", message: "the email is not exist" });
             }
         }
     )

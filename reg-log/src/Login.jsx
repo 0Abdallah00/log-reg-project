@@ -20,8 +20,11 @@ function Login(){
             (result)=>{
 
                 console.log(result.data) ;
-                if(result.data === "sucsees"){
-                    navigate('/profile') ;
+                if(result.data.status === "success"){
+                   localStorage.setItem("token", result.data.token);
+                   navigate('/profile') ;
+                }else{
+                   alert(result.data.message);
                 }
             }
         ).catch(err => console.log(err)) 
