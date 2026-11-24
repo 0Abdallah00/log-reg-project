@@ -1,19 +1,26 @@
 .button{
     border-radius: 15px ;
-    background-color: #6938EF ;
+    background-color: #030bf3 ;
     width: 60%;
     padding: 16px 16px ;
     margin: 0px 10px ;
     border: none ;
-    color: #fff;
+    color: #f4efef;
     font-size: 16px;
 }
+.button placeholder{
+    color: black;
+}
 .button:hover{
-    background-color: #7347ee  ;
+    background-color: #ffffff  ;
     cursor: pointer ;
+    color: black;
 }
 .form-container{
-    background: #f8f8f825;
+    background: transparent ;
+    border: 2px solid rgba(255,255,255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgb(0,0,0,.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,19 +43,25 @@
 .input-box{
     width: 100%;
     padding: 16px 18px ;
+    border: 2px solid rgba(255,255,255,.2);
     border-radius: 15px;
-    border: 1px solid #f8f8f825;
     text-decoration: none;
-    background: #f8f8f83d;
+    background: transparent;
     box-sizing: border-box;
+    color: white;
 }
-.has-account{
+.input-box::placeholder{
+    color: #fff;
+}
 
+.has-account{
     color: #fff;
     font-size: 14px;
     text-align: center;
 }
 .has-account a{
-    color: #6938EF;
+    color: #030bf3;
     text-decoration: none;
 }
+
+/* ===== Validation messages ===== */

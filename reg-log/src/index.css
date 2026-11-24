@@ -3,7 +3,7 @@ body{
     display: flex ;
     align-items: center;
     justify-content: center ;
-    background: linear-gradient( 135deg ,#A78BFA  ,#101744   ) ;
+   background:url('./assets/background.png') no-repeat ;
     padding:70px 0px ;
     min-height: 100vh;
     box-sizing: border-box;
